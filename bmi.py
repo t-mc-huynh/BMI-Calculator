@@ -81,7 +81,7 @@ metric_rb = Checkbutton(
     variable = var,
     onvalue = 2,
     offvalue = 0,
-    command = calculateBMI
+    command = calculate_metric_BMI
 )
 
 frame3 = Frame(
@@ -97,37 +97,14 @@ age_tf = Entry(
     frame3, 
 )
 
-frame5 = Frame(
-    frame
-)
-
-gen_lb = Label(
-    frame5,
-    text='Select Gender'
-)
-
-male_rb = Radiobutton(
-    frame5,
-    text = 'Male',
-    variable = var,
-    value = 3
-)
-
-female_rb = Radiobutton(
-    frame5,
-    text = 'Female',
-    variable = var,
-    value = 4
-)
-
 height_lb = Label(
     frame4,
-    text="Enter Height (inches)  "
+    text="Enter Height (ft or m)  "
 )
 
 weight_lb = Label(
     frame4,
-    text="Enter Weight (lbs)  "
+    text="Enter Weight (lbs or kg)  "
 )
 
 height_tf = Entry(
@@ -136,24 +113,6 @@ height_tf = Entry(
 
 weight_tf = Entry(
     frame4,
-)
-
-cal_btn = Button(
-    frame,
-    text='Calculate',
-    command=calculateBMI
-)
-
-reset_btn = Button(
-    frame,
-    text='Reset',
-    command=reset_entry
-)
-
-exit_btn = Button(
-    frame,
-    text='Exit',
-    command=lambda:ws.destroy()
 )
 
 frame2.grid(row=0, column=2, pady=5)
@@ -165,16 +124,12 @@ frame3.grid(row=1, column=2, pady=3)
 age_lb.grid(row=1, column=0)
 age_tf.grid(row=1, column=2, pady=5)
 
-gen_lb.grid(row=1, column=0)
-male_rb.grid(row=1, column=1)
-female_rb.grid(row=1, column=2)
-
 frame4.grid(row=2, column=2)
 height_lb.grid(row=1, column=1)
 weight_lb.grid(row=2, column=1)
 height_tf.grid(row=1, column=2, pady=5)
 weight_tf.grid(row=2, column=2, pady=5)
 
-frame5.grid(row=5, columnspan=3, pady=10)
+frame2.grid(row=5, columnspan=3, pady=10)
 
 ws.mainloop()
