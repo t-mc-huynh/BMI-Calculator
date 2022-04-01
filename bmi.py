@@ -60,18 +60,22 @@ select_lb = Label(
     text='Select Mode'
 )
 
-us_rb = Radiobutton(
+us_rb = Checkbutton(
     frame2,
     text = 'US',
     variable = var,
-    value = 1
+    onvalue = 1,
+    offvalue = 0,
+    command = calculateBMI
 )
 
-metric_rb = Radiobutton(
+metric_rb = Checkbutton(
     frame2,
     text = 'Metric',
     variable = var,
-    value = 2
+    onvalue = 2,
+    offvalue = 0,
+    command = calculateBMI
 )
 
 frame3 = Frame(
