@@ -47,92 +47,124 @@ frame = Frame(
 )
 frame.pack(expand=True)
 
-
-age_lb = Label(
-    frame,
-    text="Enter Age (2 - 120)"
+frame4 = Frame(
+    frame
 )
-age_lb.grid(row=1, column=1)
-
-age_tf = Entry(
-    frame, 
-)
-age_tf.grid(row=1, column=2, pady=5)
-
-gen_lb = Label(
-    frame,
-    text='Select Gender'
-)
-gen_lb.grid(row=2, column=1)
 
 frame2 = Frame(
     frame
 )
-frame2.grid(row=2, column=2, pady=5)
 
-male_rb = Radiobutton(
+select_lb = Label(
     frame2,
-    text = 'Male',
+    text='Select Mode'
+)
+
+us_rb = Radiobutton(
+    frame2,
+    text = 'US',
     variable = var,
     value = 1
 )
-male_rb.pack(side=LEFT)
 
-female_rb = Radiobutton(
+metric_rb = Radiobutton(
     frame2,
-    text = 'Female',
+    text = 'Metric',
     variable = var,
     value = 2
 )
-female_rb.pack(side=RIGHT)
-
-height_lb = Label(
-    frame,
-    text="Enter Height (inches)  "
-)
-height_lb.grid(row=3, column=1)
-
-weight_lb = Label(
-    frame,
-    text="Enter Weight (lbs)  ",
-
-)
-weight_lb.grid(row=4, column=1)
-
-height_tf = Entry(
-    frame,
-)
-height_tf.grid(row=3, column=2, pady=5)
-
-weight_tf = Entry(
-    frame,
-)
-weight_tf.grid(row=4, column=2, pady=5)
 
 frame3 = Frame(
     frame
 )
-frame3.grid(row=5, columnspan=3, pady=10)
+
+age_lb = Label(
+    frame3,
+    text="Enter Age (2 - 120)     "
+)
+
+age_tf = Entry(
+    frame3, 
+)
+
+frame5 = Frame(
+    frame
+)
+
+gen_lb = Label(
+    frame5,
+    text='Select Gender'
+)
+
+male_rb = Radiobutton(
+    frame5,
+    text = 'Male',
+    variable = var,
+    value = 3
+)
+
+female_rb = Radiobutton(
+    frame5,
+    text = 'Female',
+    variable = var,
+    value = 4
+)
+
+height_lb = Label(
+    frame4,
+    text="Enter Height (inches)  "
+)
+
+weight_lb = Label(
+    frame4,
+    text="Enter Weight (lbs)  "
+)
+
+height_tf = Entry(
+    frame4,
+)
+
+weight_tf = Entry(
+    frame4,
+)
 
 cal_btn = Button(
-    frame3,
+    frame,
     text='Calculate',
     command=calculateBMI
 )
-cal_btn.pack(side=LEFT)
 
 reset_btn = Button(
-    frame3,
+    frame,
     text='Reset',
     command=reset_entry
 )
-reset_btn.pack(side=LEFT)
 
 exit_btn = Button(
-    frame3,
+    frame,
     text='Exit',
     command=lambda:ws.destroy()
 )
-exit_btn.pack(side=RIGHT)
+
+frame2.grid(row=0, column=2, pady=5)
+select_lb.grid(row=1, column=0)
+us_rb.grid(row=1, column=1)
+metric_rb.grid(row=1, column=2)
+
+frame3.grid(row=1, column=2, pady=3)
+age_lb.grid(row=1, column=0)
+age_tf.grid(row=1, column=2, pady=5)
+
+gen_lb.grid(row=1, column=0)
+male_rb.grid(row=1, column=1)
+female_rb.grid(row=1, column=2)
+
+frame4.grid(row=2, column=2)
+height_lb.grid(row=1, column=1)
+weight_lb.grid(row=2, column=1)
+height_tf.grid(row=1, column=2, pady=5)
+weight_tf.grid(row=2, column=2, pady=5)
+
+frame5.grid(row=5, columnspan=3, pady=10)
 
 ws.mainloop()
