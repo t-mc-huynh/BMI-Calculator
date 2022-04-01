@@ -1,12 +1,18 @@
 from tkinter import *
 from tkinter import messagebox
 
-def calculateBMI():
+def calculate_us_BMI():
     lb = int(weight_tf.get())
-    # cm = int(height_tf.get())/100
     feet = float(height_tf.get())
     inch = feet * 12
     bmi = (lb / (inch * inch)) * 703
+    bmi = round(bmi, 1)
+    indexBMI(bmi)
+    
+def calculate_metric_BMI():
+    kg = int(weight_tf.get())
+    m = float(height_tf.get())
+    bmi = kg / (m * m)
     bmi = round(bmi, 1)
     indexBMI(bmi)
 
