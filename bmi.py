@@ -72,7 +72,7 @@ us_rb = Checkbutton(
     variable = var,
     onvalue = 1,
     offvalue = 0,
-    command = calculateBMI
+    command = calculate_us_BMI
 )
 
 metric_rb = Checkbutton(
