@@ -18,21 +18,21 @@ def calculate_metric_BMI():
 
 def indexBMI(bmi):
     if bmi < 16.0:
-        messagebox.showinfo('bmi-pythonguides', f'BMI = {bmi} is severely underweight')
+        messagebox.showinfo('BMI Estimate', f'BMI = {bmi} is severely underweight')
     elif (bmi > 16.0) and (bmi < 18.4):
-        messagebox.showinfo('bmi-pythonguides', f'BMI = {bmi} is underweight')
+        messagebox.showinfo('BMI Estimate', f'BMI = {bmi} is underweight')
     elif (bmi > 18.4) and (bmi < 24.9):
-        messagebox.showinfo('bmi-pythonguides', f'BMI = {bmi} is normal')
+        messagebox.showinfo('BMI Estimate', f'BMI = {bmi} is normal')
     elif (bmi > 24.9) and (bmi < 29.9):
-        messagebox.showinfo('bmi-pythonguides', f'BMI = {bmi} is overweight')
+        messagebox.showinfo('BMI Estimate', f'BMI = {bmi} is overweight')
     elif (bmi > 29.9) and (bmi < 34.9):
-        messagebox.showinfo('bmi-pythonguides', f'BMI = {bmi} is moderately obese')
+        messagebox.showinfo('BMI Estimate', f'BMI = {bmi} is moderately obese')
     elif (bmi > 34.9) and (bmi < 39.9):
-        messagebox.showinfo('bmi-pythonguides', f'BMI = {bmi} is severly obese')
+        messagebox.showinfo('BMI Estimate', f'BMI = {bmi} is severly obese')
     elif (bmi > 40.0):
-        messagebox.showinfo('bmi-pythonguides', f'BMI = {bmi} is morbidly obese') 
+        messagebox.showinfo('BMI Estimate', f'BMI = {bmi} is morbidly obese') 
     else:
-        messagebox.showerror('bmi-pythonguides', 'something went wrong!') 
+        messagebox.showerror('BMI Estimate', 'something went wrong!') 
         
 def reset_entry():
     age_tf.delete(0,'end')
@@ -40,7 +40,7 @@ def reset_entry():
     weight_tf.delete(0,'end')
 
 ws = Tk()
-ws.title('PythonGuides')
+ws.title('BMI Calculator by Python')
 ws.geometry('400x300')
 ws.config(bg='#686e70')
 
